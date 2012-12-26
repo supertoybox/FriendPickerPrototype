@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionStateChanged:) name: FBSessionStateChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionStateChanged:) name:FBSessionStateChangedNotification object:nil];
     
     self.selectFriendsButton.hidden = YES;
 }
@@ -55,7 +55,7 @@
     }
     [self.friendPickerController loadData];
     [self.friendPickerController clearSelection]; 
-//    [self presentModalViewController:self.friendPickerController animated:YES];
+
     // This message will only work on iOS 5+. The completion handler is not implemented on iOS 4 and below.
     [self presentViewController:self.friendPickerController animated:YES completion:^(void){[self addSearchBarToFriendPickerView];}];
 }
@@ -66,6 +66,8 @@
 }
 
 #pragma mark - Custom Facebook Select Friends Search Methods
+// Method to that adds a search bar to the built-in Friend Selector View.
+// We add this search bar to the canvasView of the FBFriendPickerViewController.
 - (void)addSearchBarToFriendPickerView
 {
     if (self.searchBar == nil) {
@@ -81,12 +83,42 @@
         newFrame.origin.y = searchBarHeight;
         self.friendPickerController.tableView.frame = newFrame;
     }
+
+    UITextField *searchField = [self.searchBar valueForKey:@"_searchField"];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(searchBarSearchTextDidChange:)name:UITextFieldTextDidChangeNotification object:searchField];
 }
 
-- (void) handleSearch:(UISearchBar *)searchBar {
+// There is no delegate UISearchBarDelegate method for when text changes.
+// This is a custom method using NSNotificationCenter
+- (void)searchBarSearchTextDidChange:(NSNotification*)notification
+{
+    UITextField *searchField = notification.object;
+    self.searchText = searchField.text;
+    [self.friendPickerController updateView];
+}
+
+// Private Method that handles the search functionality
+- (void)handleSearch:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
     self.searchText = searchBar.text;
     [self.friendPickerController updateView];
+}
+
+// Method that actually does the sorting.
+// This filters the data without having to call the server.
+- (BOOL)friendPickerViewController:(FBFriendPickerViewController *)friendPicker shouldIncludeUser:(id<FBGraphUser>)user
+{
+    if (self.searchText && ![self.searchText isEqualToString:@""]) {
+        NSRange result = [user.name rangeOfString:self.searchText options:NSCaseInsensitiveSearch];
+        if (result.location != NSNotFound) {
+            return YES;
+        } else {
+            return NO;
+        }
+    } else {
+        return YES;
+    }
+    return YES;
 }
 
 #pragma mark - UISearchBarDelegate Methods
@@ -101,7 +133,8 @@
 }
 
 #pragma mark - Facebook Session State Notification Methods
-- (void)sessionStateChanged:(NSNotification*)notification {
+- (void)sessionStateChanged:(NSNotification*)notification
+{
     if (FBSession.activeSession.isOpen) {
         self.selectFriendsButton.hidden = NO;
         [self.loginButton setTitle:@"Logout" forState:UIControlStateNormal];

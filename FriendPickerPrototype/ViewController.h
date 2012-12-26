@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, retain) IBOutlet UIButton *loginButton;
+@property (nonatomic, retain) IBOutlet UIButton *selectFriendsButton;
 
 @end

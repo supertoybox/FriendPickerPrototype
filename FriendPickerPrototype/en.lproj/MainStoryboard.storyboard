@@ -14,7 +14,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gof-OR-k5e">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="TWj-bc-Y9Z"/>
+                                    <constraint firstAttribute="width" constant="73" id="cZj-FL-ukS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Login">
@@ -25,18 +25,37 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginDidTouch:" destination="2" eventType="touchUpInside" id="fA3-wz-mxZ"/>
+                                    <action selector="loginAction:" destination="2" eventType="touchUpInside" id="KHX-V0-qgj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzc-hj-XT8">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="aJu-t2-1ME"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Select Friends">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectFriendsAction:" destination="2" eventType="touchUpInside" id="aHu-ho-W9X"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uzc-hj-XT8" firstAttribute="centerX" secondItem="gof-OR-k5e" secondAttribute="centerX" type="default" id="DB8-LJ-aNW"/>
+                            <constraint firstItem="gof-OR-k5e" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="XPf-CG-msW"/>
                             <constraint firstItem="gof-OR-k5e" firstAttribute="top" secondItem="3" secondAttribute="top" constant="30" id="d5K-Zy-Sh3"/>
-                            <constraint firstItem="gof-OR-k5e" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="vQG-e0-rfv"/>
+                            <constraint firstItem="uzc-hj-XT8" firstAttribute="top" secondItem="gof-OR-k5e" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ngU-SW-1C7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="gof-OR-k5e" id="k6l-4M-lNs"/>
+                        <outlet property="selectFriendsButton" destination="uzc-hj-XT8" id="zQV-cs-Cmt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -64,8 +83,10 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="loginDidTouch:"/>
+                <relationship kind="action" name="loginAction:"/>
+                <relationship kind="action" name="selectFriendsAction:"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="selectFriendsButton" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		355397F6168A894C00520B4D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 355397F5168A894C00520B4D /* FacebookSDK.framework */; };
+		355397F9168A89A800520B4D /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 355397F7168A89A800520B4D /* FacebookSDKResources.bundle */; };
+		355397FA168A89A800520B4D /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 355397F8168A89A800520B4D /* FBUserSettingsViewResources.bundle */; };
+		355397FE168A89CE00520B4D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 355397FB168A89CE00520B4D /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		355397FF168A89CE00520B4D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 355397FC168A89CE00520B4D /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		35539800168A89CE00520B4D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 355397FD168A89CE00520B4D /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		35BD4A1A168A3E3E000ED4C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BD4A19168A3E3E000ED4C5 /* UIKit.framework */; };
 		35BD4A1C168A3E3E000ED4C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BD4A1B168A3E3E000ED4C5 /* Foundation.framework */; };
 		35BD4A1E168A3E3E000ED4C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BD4A1D168A3E3E000ED4C5 /* CoreGraphics.framework */; };
@@ -21,6 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		355397F5168A894C00520B4D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		355397F7168A89A800520B4D /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../../../FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		355397F8168A89A800520B4D /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBUserSettingsViewResources.bundle; path = ../../../../FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		355397FB168A89CE00520B4D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		355397FC168A89CE00520B4D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		355397FD168A89CE00520B4D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		35BD4A15168A3E3E000ED4C5 /* FriendPickerPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendPickerPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BD4A19168A3E3E000ED4C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		35BD4A1B168A3E3E000ED4C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,18 +56,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355397FE168A89CE00520B4D /* Accounts.framework in Frameworks */,
+				355397FF168A89CE00520B4D /* AdSupport.framework in Frameworks */,
+				35539800168A89CE00520B4D /* Social.framework in Frameworks */,
 				35BD4A1A168A3E3E000ED4C5 /* UIKit.framework in Frameworks */,
 				35BD4A1C168A3E3E000ED4C5 /* Foundation.framework in Frameworks */,
 				35BD4A1E168A3E3E000ED4C5 /* CoreGraphics.framework in Frameworks */,
+				355397F6168A894C00520B4D /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		355397F2168A7A4900520B4D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				35BD4A28168A3E3E000ED4C5 /* AppDelegate.h */,
+				35BD4A29168A3E3E000ED4C5 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		355397F4168A7A7F00520B4D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				35BD4A34168A3E3E000ED4C5 /* ViewController.h */,
+				35BD4A35168A3E3E000ED4C5 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		35BD4A0A168A3E3E000ED4C5 = {
 			isa = PBXGroup;
 			children = (
+				355397FB168A89CE00520B4D /* Accounts.framework */,
+				355397FC168A89CE00520B4D /* AdSupport.framework */,
+				355397FD168A89CE00520B4D /* Social.framework */,
 				35BD4A1F168A3E3E000ED4C5 /* FriendPickerPrototype */,
 				35BD4A18168A3E3E000ED4C5 /* Frameworks */,
 				35BD4A16168A3E3E000ED4C5 /* Products */,
@@ -73,6 +110,9 @@
 		35BD4A18168A3E3E000ED4C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				355397F7168A89A800520B4D /* FacebookSDKResources.bundle */,
+				355397F8168A89A800520B4D /* FBUserSettingsViewResources.bundle */,
+				355397F5168A894C00520B4D /* FacebookSDK.framework */,
 				35BD4A19168A3E3E000ED4C5 /* UIKit.framework */,
 				35BD4A1B168A3E3E000ED4C5 /* Foundation.framework */,
 				35BD4A1D168A3E3E000ED4C5 /* CoreGraphics.framework */,
@@ -83,11 +123,9 @@
 		35BD4A1F168A3E3E000ED4C5 /* FriendPickerPrototype */ = {
 			isa = PBXGroup;
 			children = (
-				35BD4A28168A3E3E000ED4C5 /* AppDelegate.h */,
-				35BD4A29168A3E3E000ED4C5 /* AppDelegate.m */,
+				355397F2168A7A4900520B4D /* AppDelegate */,
+				355397F4168A7A7F00520B4D /* ViewController */,
 				35BD4A31168A3E3E000ED4C5 /* MainStoryboard.storyboard */,
-				35BD4A34168A3E3E000ED4C5 /* ViewController.h */,
-				35BD4A35168A3E3E000ED4C5 /* ViewController.m */,
 				35BD4A20168A3E3E000ED4C5 /* Supporting Files */,
 			);
 			path = FriendPickerPrototype;
@@ -163,6 +201,8 @@
 				35BD4A2E168A3E3E000ED4C5 /* Default@2x.png in Resources */,
 				35BD4A30168A3E3E000ED4C5 /* Default-568h@2x.png in Resources */,
 				35BD4A33168A3E3E000ED4C5 /* MainStoryboard.storyboard in Resources */,
+				355397F9168A89A800520B4D /* FacebookSDKResources.bundle in Resources */,
+				355397FA168A89A800520B4D /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,9 +294,14 @@
 		35BD4A3A168A3E3E000ED4C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FriendPickerPrototype/FriendPickerPrototype-Prefix.pch";
 				INFOPLIST_FILE = "FriendPickerPrototype/FriendPickerPrototype-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -265,9 +310,14 @@
 		35BD4A3B168A3E3E000ED4C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FriendPickerPrototype/FriendPickerPrototype-Prefix.pch";
 				INFOPLIST_FILE = "FriendPickerPrototype/FriendPickerPrototype-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -292,6 +342,7 @@
 				35BD4A3B168A3E3E000ED4C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

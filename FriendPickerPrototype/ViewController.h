@@ -10,4 +10,6 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UIButton *loginButton;
+
 @end
